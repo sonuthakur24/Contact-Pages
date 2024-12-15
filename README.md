@@ -1,4 +1,4 @@
- # Contact Page
+<!-- # Contact Page
 
 Welcome to the Contact Page repository! This project is a responsive and interactive contact form built with HTML, PHP, Tailwind CSS, and JavaScript.
 
@@ -87,5 +87,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ---
 
 Star ⭐️ the repo if you like it!
-
+-->
 
