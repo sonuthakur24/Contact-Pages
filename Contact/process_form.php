@@ -1,5 +1,5 @@
 <?php
- // Start the session
+ session_start();// Start the session
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Define the error messages
