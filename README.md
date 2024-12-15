@@ -3,8 +3,7 @@
 Welcome to the Contact Page repository! This project is a responsive and interactive contact form built with HTML, PHP, Tailwind CSS, and JavaScript.
 
 ## Preview
-
-![Contact Page Preview](path/to/preview-image.png)
+![Screenshot 2024-12-15 173021](https://github.com/user-attachments/assets/e7e78da6-dc36-4105-91ef-3ddd936a965b)
 
 ## Features
 
@@ -26,7 +25,7 @@ To get a local copy up and running, follow these simple steps:
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/contact-page.git
+    git clone https://github.com/sonuthakur24/contact-page.git
     ```
 
 2. **Navigate to the project directory:**
@@ -56,7 +55,7 @@ Contributions are what make the open-source community such an amazing place to l
 
 1. **Fork the Project:**
     ```bash
-    git fork https://github.com/your-username/contact-page.git
+    git fork https://github.com/sonuthakur24/contact-page.git
     ```
 
 2. **Create your Feature Branch:**
@@ -82,8 +81,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-- **Email:** [marketing@ruttonsha.com](mailto:marketing@ruttonsha.com)
-- **LinkedIn:** [Ruttonsha](https://www.linkedin.com/in/ruttonsha)
+- **Email:** [sonuthakursk24@gmail.com](mailto:sonuthakursk24@gmail.com)
+- **LinkedIn:** [Sonu Thakur](https://www.linkedin.com/in/sonu24)
 
 ---
 
