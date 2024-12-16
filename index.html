@@ -1,10 +1,10 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
     <style>
         .hero-bg {
             background-image: url('pexel.jpg');
@@ -12,43 +12,8 @@
             background-position: center;
             height: 100vh;
         }
-        .message {
-            display: none;
-            margin-top: 10px;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        .error { 
-            background-color: #f8d7da;
-            color: #721c24;
-        }
-        .success { 
-            background-color: #d4edda;
-            color: #155724;
-        }
-    </style>
-    <script>
-        function clearMessages() {
-            document.querySelector('.success').style.display = 'none';
-            document.querySelector('.error').style.display = 'none';
-        }
         
-        function showMessage(type, message) {
-            const msgElement = document.querySelector('.' + type);
-            msgElement.textContent = message;
-            msgElement.style.display = 'block';
-            setTimeout(clearMessages, 5000);
-        }
-
-        window.onload = function() {
-            <?php if ($successMessage): ?>
-                showMessage("success", "<?php echo $successMessage; ?>");
-            <?php endif; ?>
-            <?php foreach ($errorMessages as $error): ?>
-                showMessage("error", "<?php echo $error; ?>");
-            <?php endforeach; ?>
-        };
-    </script>
+    </style>
 </head>
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
     <!-- Full Screen Image -->
@@ -85,9 +50,9 @@
                 </div>
                 <!-- Contact Form -->
                 <div>
-                    <form class="space-y-4" action="process_form.php" method="post">
-                        <div class="success message"></div>
-                        <div class="error message"></div>
+                    <form class="space-y-4" onsubmit="return validateForm()">
+                        <div class="success message" style="color: green;"></div>
+                        <div class="error message" style="color: red;"></div>
                         <input type="text" name="name" placeholder="Name" class="w-full p-3 border rounded-lg" />
                         <input type="email" name="email" placeholder="Email" class="w-full p-3 border rounded-lg" />
                         <input type="text" name="contact" placeholder="Contact Number" class="w-full p-3 border rounded-lg" />
@@ -101,6 +66,7 @@
             <div class="mb-8">
                 <h3 class="text-lg font-medium">Map</h3>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.6333455528293!2d72.88897517466633!3d19.123734450473332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c80e7065cd01%3A0x6762fa5c67ba4ac0!2sRIR%20POWER%20ELECTRONICS%20LIMITED%20(Formerly%20Ruttonsha%20International%20Rectifier%20Ltd.)!5e0!3m2!1sen!2sin!4v1734250243655!5m2!1sen!2sin" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
             </div>
             <!-- Company Address -->
             <div class="bg-blue-50 p-6 rounded-lg mb-8">
@@ -121,7 +87,44 @@
             <footer class="mt-8 text-center text-gray-600">
                 <p>&copy; 2024 <span class="font-bold">Ruttonsha</span>. All rights reserved.</p>
             </footer>
+
         </div>
     </div>
+    <script>
+        function validateForm() {
+            var name = document.forms[0]["name"].value;
+            var email = document.forms[0]["email"].value;
+            var contact = document.forms[0]["contact"].value;
+            var city = document.forms[0]["city"].value;
+            var message = document.forms[0]["message"].value;
+            var errorMessage = document.querySelector('.error.message');
+            var successMessage = document.querySelector('.success.message');
+
+            if (email.trim() == "" || contact.trim() == "" || city.trim() == "" || message.trim() == "") {
+                errorMessage.textContent = "Name, Email, Contact, City, and Message fields must not be empty.";
+                successMessage.textContent = ""; // Clear any previous success message
+                return false;
+            }
+
+            errorMessage.textContent = ""; // Clear any previous error message
+            successMessage.textContent = "Form submitted successfully!";
+
+            // Clear form fields
+            document.forms[0].reset();
+
+            // Prevent actual form submission
+            return false;
+        }
+    </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
